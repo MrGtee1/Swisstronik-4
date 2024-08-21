@@ -12,7 +12,7 @@ const sendShieldedTransaction = async (signer, destination, data, value) => {
 };
 
 async function main() {
-  const replace_contractAddress = "0x2bB47B9feF34F7b0B332996154AA15f8b1dbba83";
+  const replace_contractAddress = "0xe4aAAa76147D3e3693b4cb5010d10c21C193FA77";
   const [signer] = await hre.ethers.getSigners();
 
   const replace_contractFactory = await hre.ethers.getContractFactory("PERC20Sample");
@@ -23,7 +23,8 @@ async function main() {
   const transaction = await sendShieldedTransaction(signer, replace_contractAddress, contract.interface.encodeFunctionData(replace_functionName, replace_functionArgs), 0);
 
   await transaction.wait();
-  console.log("Transfer Transaction Hash:", `https://explorer-evm.testnet.swisstronik.com/tx/${transaction.hash}`);
+  console.log("Transfer Transaction Hash:", `https://explorer-evm.testnet.swisstronik.com/tx/${transactio
+  n.hash}`);
 }
 
 main().catch((error) => {

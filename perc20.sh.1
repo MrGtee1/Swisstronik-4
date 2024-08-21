@@ -391,8 +391,7 @@ async function main() {
   const transaction = await sendShieldedTransaction(signer, replace_contractAddress, contract.interface.encodeFunctionData(replace_functionName, replace_functionArgs), 0);
 
   await transaction.wait();
-  console.log("Transfer Transaction Hash:", \`https://explorer-evm.testnet.swisstronik.com/tx/\${transactio
-  n.hash}\`);
+  console.log("Transfer Transaction Hash:", \`https://explorer-evm.testnet.swisstronik.com/tx/\${transaction.hash}\`);
 }
 
 main().catch((error) => {
